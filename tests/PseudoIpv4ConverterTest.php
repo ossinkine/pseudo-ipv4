@@ -12,7 +12,7 @@ class PseudoIpv4ConverterTest extends TestCase
      */
     private $converter;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->converter = new PseudoIpv4Converter();
     }
@@ -20,7 +20,7 @@ class PseudoIpv4ConverterTest extends TestCase
     /**
      * @dataProvider provideIpv6
      */
-    public function testConvert(string $expectedIpv4, string $ipv6): void
+    public function testConvert(string $expectedIpv4, string $ipv6)
     {
         $ipv4 = $this->converter->convert($ipv6);
 
@@ -38,7 +38,7 @@ class PseudoIpv4ConverterTest extends TestCase
     /**
      * @dataProvider provideWrongIpv6
      */
-    public function testConvertException(string $wrongIpv6): void
+    public function testConvertException(string $wrongIpv6)
     {
         $this->expectException(WrongIpv6Exception::class);
 
