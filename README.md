@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/ossinkine/pseudo-ipv4.svg?branch=master)](https://travis-ci.org/ossinkine/pseudo-ipv4)
 
 Pseudo IPv4 is a library which converts IPv6 address to IPv4 in Class E space (240.0.0.0 - 255.255.255.255).
-It can be helpful is your app operates with IPv4 only but the customer uses IPv6.
+It can be helpful if your app operates with IPv4 only but the customer uses IPv6.
 For more information see [CloudFlare solution](https://blog.cloudflare.com/eliminating-the-last-reasons-to-not-enable-ipv6/)
 
 ## How it works
