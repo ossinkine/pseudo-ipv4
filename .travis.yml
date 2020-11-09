@@ -1,21 +1,29 @@
-language: php
+# TravisCI configuration for ossinkine/pseudo-ipv4
+
+language: "php"
+os:
+    - "linux"
+dist: bionic
 
 cache:
     directories:
-        - $HOME/.composer/cache
+        - "$HOME/.composer/cache"
 
 php:
-    - 7.3
-    - 7.4
-    - 8.0snapshot
+    - "8.0snapshot"
+    - "7.4"
+    - "7.3"
 
 jobs:
     include:
-        - php: 7.3
-          env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest"
+        - php: "7.3"
+          install: "travis_retry composer update --no-interaction --prefer-dist --prefer-stable --prefer-lowest"
+
+before_install:
+    - "composer validate --strict"
 
 install:
-    - travis_retry composer update --no-interaction --prefer-dist $COMPOSER_FLAGS
+    - "travis_retry composer update --no-interaction --prefer-dist"
 
 script:
-    - ./vendor/bin/phpunit
+    - "./vendor/bin/phpunit"
